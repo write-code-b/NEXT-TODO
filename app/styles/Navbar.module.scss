@@ -1,0 +1,19 @@
+@import './mixins';
+
+.navbar {
+  width: 75rem;
+}
+
+.pcLogo {
+  @include for-mobile-devices {
+    @include hide;
+  }
+}
+
+.mobileLogo {
+  @include hide;
+
+  @include for-mobile-devices {
+    @include show;
+  }
+}
