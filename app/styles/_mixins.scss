@@ -1,0 +1,46 @@
+//breakpoints
+$xs: 480px; //for smaller smartphones
+$sm: 640px; //for medium smartphones
+$lg: 1024px; //for tablets
+$xl: 1280px; //for desktops
+
+@mixin for-xl-devices {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin for-large-devices {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin for-tablet-devices {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin for-mobile-devices {
+  @media only screen and (max-width: $sm) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin flex-box($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin show {
+  display: block;
+  opacity: 1;
+}
+
+@mixin hide {
+  display: none;
+  opacity: 0;
+}
