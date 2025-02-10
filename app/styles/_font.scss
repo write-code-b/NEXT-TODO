@@ -1,0 +1,15 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+//Size
+$small-font-size: 16px;
+$medium-font-size: 18px;
+$large-font-size: 20px;
+
+//Weight
+$normal-font-weight: 800;
+$bold-font-weight: 700;
+$bolder-font-weight: 800;
+
+body {
+  font-family: 'NanumSquare', sans-serif;
+}
