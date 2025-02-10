@@ -9,6 +9,7 @@
   width: 100vw;
   height: 100vh;
   min-height: 100svh;
+  background-color: $gray-50;
 }
 
 .header {
@@ -20,7 +21,8 @@
 }
 
 .main {
-  @include flex-box;
+  @include flex-box($align-items: flex-start);
   width: 75rem;
   height: 100%;
+  margin-top: 24px;
 }
