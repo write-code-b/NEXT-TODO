@@ -9,8 +9,6 @@ export default function Form() {
   const [formData, setFormData] = useState({ name: '' });
   const [state, formAction] = useActionState(createTodo, formData);
 
-  const [name, setName] = useState('');
-
   return (
     <form action={formAction} className={styles.checkListInputWrapper}>
       <label htmlFor='checklist'></label>
@@ -21,12 +19,11 @@ export default function Form() {
           name='name'
           className={styles.checkListInput}
           type='text'
-          onChange={e => setName(e.target.value)}
           placeholder={'할 일을 입력해주세요'}
           required
         />
       </div>
-      <Button label='추가하기' state={'submit'} noData={false} active={name.length ? true : false} />
+      <Button label='추가하기' state={'submit'} noData={false} />
     </form>
   );
 }

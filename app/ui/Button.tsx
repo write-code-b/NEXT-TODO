@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import styles from '@/styles/Button.module.scss';
+import Image from 'next/image'
+import styles from '@/styles/Button.module.scss'
 
 interface ButtonProps {
-  noData?: boolean;
-  state?: string;
-  label?: string;
-  onClick?: () => void;
+  noData?: boolean
+  state?: string
+  label?: string
+  onClick?: () => void
 }
 
 export default function Button(props: ButtonProps) {
-  const { noData, state, label, onClick } = props;
-  const fontColor = noData ? 'white' : 'black';
+  const { noData, state, label, onClick } = props
+  const fontColor = noData ? 'white' : 'black'
 
   return (
     <div className={styles.buttonWrapper}>
@@ -18,10 +18,13 @@ export default function Button(props: ButtonProps) {
       <button
         className={styles.button}
         style={{ color: `${fontColor}` }}
-        onClick={onClick}>
-        {state === 'submit' && <Image src='/plus-dark-button.png' width={16} height={16} alt='' />}
-        {label}
+        onClick={onClick}
+      >
+        {state === 'submit' && (
+          <Image src="/button/plus-dark-button.png" width={16} height={16} alt="" />
+        )}
+        <span>{label}</span>
       </button>
     </div>
-  );
+  )
 }

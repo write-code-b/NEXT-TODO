@@ -72,4 +72,5 @@ export const updateTodo = async (id: number, isCompleted: boolean) => {
   }
 
   revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
+  redirect('/')
 }
