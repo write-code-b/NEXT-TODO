@@ -20,9 +20,12 @@
   background-color: #ffffff;
 }
 
-.main {
-  @include flex-box($direction: column, $justify-content: flex-start, $gap: 40px);
-  width: 75rem;
-  height: 100%;
+.checkList {
+  @include flex-box(
+    $direction: column,
+    $justify-content: flex-start,
+    $gap: 40px
+  );
+  width: 100vw;
   margin-top: 24px;
 }

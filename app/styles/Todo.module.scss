@@ -9,6 +9,14 @@
   @include round-border;
   line-height: 18.16px;
   text-align: center;
+
+  @include for-tablet-devices {
+    width: 696px;
+  }
+
+  @include for-mobile-devices {
+    width: 344px;
+  }
 }
 
 .checkboxBtn {
@@ -23,9 +31,9 @@
 .active {
   background-color: $violet-200;
   text-decoration: line-through;
-}
 
-.active > div {
-  background: url('../../public/checkbox/active-checkbox.png') center / contain
-    no-repeat;
+  button {
+    background: url('../../public/checkbox/active-checkbox.png') center /
+      contain no-repeat;
+  }
 }

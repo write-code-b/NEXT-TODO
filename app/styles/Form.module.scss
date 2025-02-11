@@ -5,16 +5,30 @@
 .checkListInputWrapper {
   @include flex-box($gap: 16px);
   position: relative;
+  // width: 100%;
 }
 
 .checkListShadow {
-  @include shadow(1011.94px, 52.5px);
+  @include shadow($width: 1011.94px, $height: 52.5px);
+
+  @include for-tablet-devices {
+    @include shadow(
+      $width: 515.93px,
+      $height: 52.5px,
+      $top: 3.5px,
+      $left: 2.07px
+    );
+  }
+
+  @include for-mobile-devices {
+    @include shadow($width: 278.88px, $height: 52.5px, $left: 1.12px);
+  }
 }
 
 .checkListInput {
   position: relative;
-  width: 1016px;
-  height: 52.5px;
+  width: 63.5rem;
+  height: 3.281rem;
   padding: 17px 24px;
   border: solid 2px $slate-900;
   border-radius: 24px;
@@ -24,4 +38,12 @@
   font-weight: 400;
   line-height: 18.16px;
   outline: none;
+
+  @include for-tablet-devices {
+    width: 518px;
+  }
+
+  @include for-mobile-devices {
+    width: 280px;
+  }
 }

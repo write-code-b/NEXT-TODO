@@ -10,8 +10,10 @@ export default function Home() {
         <GlobalNavBar />
       </header>
       <main className={styles.main}>
-        <Form />
-        <List />
+        <div className={styles.checkList}>
+          <Form />
+          <List />
+        </div>
       </main>
       <footer></footer>
     </div>

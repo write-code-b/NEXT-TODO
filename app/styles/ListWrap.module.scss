@@ -4,4 +4,16 @@
 
 .listWrapper {
   @include flex-box($direction: row, $align-items: flex-start, $gap: 24px);
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include for-tablet-devices {
+    gap: 48px;
+  }
+
+  @include for-mobile-devices {
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
 }

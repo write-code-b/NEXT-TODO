@@ -1,6 +1,7 @@
 //breakpoints
 $xs: 480px; //for smaller smartphones
 $sm: 640px; //for medium smartphones
+$md: 768px;
 $lg: 1024px; //for tablets
 $xl: 1280px; //for desktops
 
@@ -11,13 +12,13 @@ $xl: 1280px; //for desktops
 }
 
 @mixin for-large-devices {
-  @media (max-width: $lg) {
+  @media (max-width: $md) {
     @content;
   }
 }
 
 @mixin for-tablet-devices {
-  @media (max-width: $md) {
+  @media (max-width: $lg) {
     @content;
   }
 }
@@ -28,7 +29,12 @@ $xl: 1280px; //for desktops
   }
 }
 
-@mixin flex-box($direction: row, $align-items: center, $justify-content: center, $gap: 0px) {
+@mixin flex-box(
+  $direction: row,
+  $align-items: center,
+  $justify-content: center,
+  $gap: 0px
+) {
   display: flex;
   gap: $gap;
   flex-direction: $direction;
@@ -51,10 +57,10 @@ $xl: 1280px; //for desktops
   border-radius: 24px;
 }
 
-@mixin shadow($width, $height) {
+@mixin shadow($width, $height, $top: 3.5px, $left: 4.06px) {
   position: absolute;
-  top: 3.5px;
-  left: 4.06px;
+  top: $top;
+  left: $left;
   width: $width;
   height: $height;
   border: solid 2px $slate-900;

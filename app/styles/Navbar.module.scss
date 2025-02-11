@@ -1,13 +1,15 @@
 @import './mixins';
 
 .navbar {
-  width: 75rem;
+  width: 100%;
 }
 
 .pcLogo {
   @include for-mobile-devices {
     @include hide;
   }
+
+  margin-left: 24px;
 }
 
 .mobileLogo {
@@ -15,5 +17,6 @@
 
   @include for-mobile-devices {
     @include show;
+    margin-left: 16px;
   }
 }
