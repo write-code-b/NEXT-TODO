@@ -21,7 +21,7 @@
 }
 
 .main {
-  @include flex-box($align-items: flex-start);
+  @include flex-box($direction: column, $justify-content: flex-start, $gap: 40px);
   width: 75rem;
   height: 100%;
   margin-top: 24px;

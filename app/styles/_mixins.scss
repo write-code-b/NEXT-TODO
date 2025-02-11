@@ -28,11 +28,12 @@ $xl: 1280px; //for desktops
   }
 }
 
-@mixin flex-box($direction: row, $align-items: center) {
+@mixin flex-box($direction: row, $align-items: center, $justify-content: center, $gap: 0px) {
   display: flex;
+  gap: $gap;
   flex-direction: $direction;
   align-items: $align-items;
-  justify-content: center;
+  justify-content: $justify-content;
 }
 
 @mixin show {

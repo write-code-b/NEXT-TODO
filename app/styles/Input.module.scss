@@ -1,0 +1,26 @@
+@import './variables';
+@import './font';
+@import './mixins';
+
+.checkListInputWrapper {
+  position: relative;
+}
+
+.checkListShadow {
+  @include shadow(1011.94px, 52.5px);
+}
+
+.checkListInput {
+  position: relative;
+  width: 1016px;
+  height: 52.5px;
+  padding: 17px 24px;
+  border: solid 2px $slate-900;
+  border-radius: 24px;
+  font-family: 'NanumSquare', sans-serif;
+  color: $slate-500;
+  font-size: $small-font-size;
+  font-weight: 400;
+  line-height: 18.16px;
+  outline: none;
+}

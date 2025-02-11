@@ -1,0 +1,24 @@
+@import './variables';
+@import './font';
+@import './mixins';
+
+.buttonWrapper {
+  position: relative;
+}
+
+.buttonShadow {
+  @include shadow(164.35px, 52px);
+}
+
+.button {
+  @include flex-box($gap: 4px);
+  position: relative;
+  width: 164.35px;
+  height: 52px;
+  @include round-border;
+  font-family: 'NanumSquare', sans-serif;
+  color: $slate-500;
+  font-size: $small-font-size;
+  font-weight: $bold-font-weight;
+  cursor: pointer;
+}
