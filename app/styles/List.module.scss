@@ -1,0 +1,29 @@
+@import './variables';
+@import './font';
+@import './mixins';
+
+.list {
+  @include flex-box($direction: column, $gap: 16px);
+}
+
+.tag {
+  @include flex-box;
+  align-self: flex-start;
+  width: 101px;
+  height: 36px;
+  border-radius: 23px;
+  line-height: 25.2px;
+  font-family: 'HS-Regular';
+  font-size: $medium-font-size;
+  font-weight: $light-font-weight;
+}
+
+.todo {
+  color: $green-700;
+  background-color: $lime-300;
+}
+
+.done {
+  color: $amber-300;
+  background-color: $green-700;
+}

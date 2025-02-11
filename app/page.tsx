@@ -1,6 +1,7 @@
-import GlobalNavBar from '@/ui/GlobalNavBar';
-import Form from '@/ui/Form';
-import styles from '@/styles/Page.module.scss';
+import GlobalNavBar from '@/ui/GlobalNavBar'
+import Form from '@/ui/Form'
+import List from '@/ui/ListWrap'
+import styles from '@/styles/Page.module.scss'
 
 export default function Home() {
   return (
@@ -10,8 +11,9 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <Form />
+        <List />
       </main>
       <footer></footer>
     </div>
-  );
+  )
 }

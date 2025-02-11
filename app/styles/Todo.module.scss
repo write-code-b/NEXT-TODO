@@ -1,0 +1,31 @@
+@import './variables';
+@import './mixins';
+
+.todo {
+  @include flex-box($gap: 16px, $justify-content: flex-start);
+  width: 588px;
+  height: 50px;
+  padding: 10px;
+  @include round-border;
+  line-height: 18.16px;
+  text-align: center;
+}
+
+.checkboxBtn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: url('../../public/checkbox/inactive-checkbox.png') center /
+    contain no-repeat;
+  cursor: pointer;
+}
+
+.active {
+  background-color: $violet-200;
+  text-decoration: line-through;
+}
+
+.active > div {
+  background: url('../../public/checkbox/active-checkbox.png') center / contain
+    no-repeat;
+}

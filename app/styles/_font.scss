@@ -1,11 +1,20 @@
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
 
+@font-face {
+  font-family: 'HS-Regular';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 //Size
 $small-font-size: 16px;
 $medium-font-size: 18px;
 $large-font-size: 20px;
 
 //Weight
+$light-font-weight: 400;
 $normal-font-weight: 800;
 $bold-font-weight: 700;
 $bolder-font-weight: 800;
