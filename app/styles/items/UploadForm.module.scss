@@ -1,0 +1,71 @@
+@import '../variables';
+@import '../mixins';
+
+.box {
+  @include flex-box;
+  position: relative;
+  width: 384px;
+  height: 311px;
+  border: dashed 2px $slate-300;
+  border-radius: 24px;
+  background-color: $slate-50;
+
+  @include for-tablet-devices {
+    width: 100%;
+  }
+
+  @include for-mobile-devices {
+    width: 100%;
+  }
+}
+
+.box::after {
+  content: '';
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background: url('../../../public/detail/example-image.png') center / contain
+    no-repeat;
+}
+
+.uploadButton {
+  @include flex-box;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-color: $slate-200;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.uploadButton::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('../../../public/detail/plus-button.png') center / contain
+    no-repeat;
+}
+
+.hide {
+  display: none;
+}
+
+.uploadImage {
+  position: absolute;
+  width: 384px;
+  height: 311px;
+  border-radius: 24px;
+
+  @include for-tablet-devices {
+    width: 100%;
+  }
+
+  @include for-mobile-devices {
+    width: 100%;
+  }
+}
