@@ -53,22 +53,21 @@ export default function UploadForm(props: UploadFormProps) {
       <input
         className={styles.hide}
         id="file"
-        name="file"
         type="file"
         onChange={handleFileChange}
       />
       {imageUrl && (
         <>
           <img className={styles.uploadImage} src={imageUrl} alt="" />
-          <input
-            className={styles.hide}
-            id="image"
-            name="image"
-            value={imageUrl}
-            readOnly
-          />
         </>
       )}
+      <input
+        className={styles.hide}
+        id="image"
+        name="image"
+        value={imageUrl || ''}
+        readOnly
+      />
     </div>
   )
 }

@@ -96,6 +96,7 @@ export const updateTodoById = async (
   })
 
   if (!validatedFields.success) {
+    console.log("실패!")
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Todo.',
@@ -107,8 +108,7 @@ export const updateTodoById = async (
   const url = `${process.env.NEXT_PUBLIC_API_KEY}/${process.env.NEXT_PUBLIC_TENANT_ID}/items/${id}`
 
   try {
-    console.log('try patch!')
-    fetch(url, {
+    await fetch(url, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -125,8 +125,8 @@ export const updateTodoById = async (
     }
   }
 
-  revalidatePath(`/items/${id}`)
-  redirect(`/items/${id}`)
+  revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
+  redirect('/')
 }
 
 // Delete Todo
