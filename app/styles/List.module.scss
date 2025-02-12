@@ -1,6 +1,6 @@
-@import './variables';
-@import './font';
-@import './mixins';
+@use './variables' as *;
+@use './font' as *;
+@use './mixins' as *;
 
 .list {
   @include flex-box($direction: column, $gap: 16px);

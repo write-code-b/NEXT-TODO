@@ -52,7 +52,7 @@ $xl: 1280px; //for desktops
   opacity: 0;
 }
 
-@mixin round-border($color: $slate-900) {
+@mixin round-border($color: #0f172a) {
   border: solid 2px $color;
   border-radius: 24px;
 }
@@ -63,7 +63,7 @@ $xl: 1280px; //for desktops
   left: $left;
   width: $width;
   height: $height;
-  border: solid 2px $slate-900;
+  border: solid 2px #0f172a;
   border-radius: 24px;
-  background-color: $slate-900;
+  background-color: #0f172a;
 }

@@ -1,6 +1,6 @@
-@import './variables';
-@import './font';
-@import './mixins';
+@use './variables' as *;
+@use './font' as *;
+@use './mixins' as *;
 
 .todo {
   @include flex-box($gap: 16px, $justify-content: flex-start);
