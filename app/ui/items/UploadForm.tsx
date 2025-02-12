@@ -50,15 +50,13 @@ export default function UploadForm(props: UploadFormProps) {
       <label htmlFor="file">
         <div className={styles.uploadButton}></div>
       </label>
-      {!imageUrl && (
-        <input
-          className={styles.hide}
-          id="file"
-          name="file"
-          type="file"
-          onChange={handleFileChange}
-        />
-      )}
+      <input
+        className={styles.hide}
+        id="file"
+        name="file"
+        type="file"
+        onChange={handleFileChange}
+      />
       {imageUrl && (
         <>
           <img className={styles.uploadImage} src={imageUrl} alt="" />
