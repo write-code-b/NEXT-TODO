@@ -1,4 +1,5 @@
 @import './variables';
+@import './font';
 @import './mixins';
 
 .todo {
@@ -36,4 +37,26 @@
     background: url('../../public/checkbox/active-checkbox.png') center /
       contain no-repeat;
   }
+}
+
+.editMode {
+  width: 996px;
+  justify-content: center;
+  text-decoration: underline;
+
+  @include for-tablet-devices {
+    width: 100%;
+  }
+
+  @include for-mobile-devices {
+    width: 100%;
+  }
+}
+
+.input {
+  width: 150px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: $large-font-size;
 }
