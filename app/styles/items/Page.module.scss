@@ -1,6 +1,6 @@
-@import '../variables';
-@import '../font';
-@import '../mixins';
+@use '../variables' as *;
+@use '../font' as *;
+@use '../mixins' as *;
 
 .main {
   @include flex-box($align-items: flex-start);
