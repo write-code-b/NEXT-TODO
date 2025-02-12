@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, SetStateAction, useActionState } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import Link from 'next/link'
 import { updateTodo, State } from '@/lib/actions'
 import styles from '@/styles/Todo.module.scss'
@@ -9,7 +9,7 @@ interface TodoProps {
   id: number
   name: string
   isCompleted: boolean
-  isEditable: boolean
+  isEditable?: boolean
   setNameEdit?: Dispatch<SetStateAction<string>>
 }
 

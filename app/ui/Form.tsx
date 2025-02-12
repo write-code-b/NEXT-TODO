@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useActionState } from 'react';
-import { createTodo } from '@/lib/actions';
+import { useActionState } from 'react';
+import { createTodo, State } from '@/lib/actions';
 import Button from '@/ui/Button';
 import styles from '@/styles/Form.module.scss';
 
 export default function Form() {
-  const [formData, setFormData] = useState({ name: '' });
-  
-  const [state, formAction] = useActionState(createTodo, formData);
+  const initialState: State = { message: null, errors: {} }
+  const [state, formAction] = useActionState(createTodo, initialState)
 
   return (
     <form action={formAction} className={styles.checkListInputWrapper}>

@@ -1,23 +1,21 @@
 'use client'
 
-import { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import { useState } from 'react'
 import styles from '@/styles/items/UploadForm.module.scss'
 
 interface UploadFormProps {
   imageSrc?: string | null
-  setImageUrlEdit?: Dispatch<SetStateAction<boolean>>
 }
 
 export default function UploadForm(props: UploadFormProps) {
-  const { setImageUrlEdit, imageSrc } = props
+  const { imageSrc } = props
 
   const [imageUrl, setImageUrl] = useState(imageSrc)
-  const [selectedFile, setSelectedFile] = useState(null)
 
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    if (event.currentTarget.files !== null) {
+    if (event.target.files !== null) {
       const selectedFile = event.target.files[0]
       await handleSubmit(selectedFile)
     }

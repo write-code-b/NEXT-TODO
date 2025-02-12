@@ -1,4 +1,10 @@
-@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'HS-Regular';
@@ -18,7 +24,3 @@ $light-font-weight: 400;
 $normal-font-weight: 800;
 $bold-font-weight: 700;
 $bolder-font-weight: 800;
-
-body {
-  font-family: 'NanumSquare', sans-serif;
-}

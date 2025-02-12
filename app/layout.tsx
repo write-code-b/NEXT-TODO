@@ -1,3 +1,4 @@
+import type { Viewport } from 'next'
 import '@/styles/global.scss'
 
 export default function RootLayout({
