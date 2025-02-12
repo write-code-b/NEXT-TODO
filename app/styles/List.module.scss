@@ -4,6 +4,15 @@
 
 .list {
   @include flex-box($direction: column, $gap: 16px);
+  width: 588px;
+
+  @include for-tablet-devices {
+    width: 696px;
+  }
+
+  @include for-mobile-devices {
+    width: 344px;
+  }
 }
 
 .tag {
@@ -21,6 +30,12 @@
 .todo {
   color: $green-700;
   background-color: $lime-300;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: $slate-400;
+  font-size: $small-font-size;
 }
 
 .done {
