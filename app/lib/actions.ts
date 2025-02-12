@@ -128,3 +128,24 @@ export const updateTodoById = async (
   revalidatePath(`/items/${id}`)
   redirect(`/items/${id}`)
 }
+
+// Delete Todo
+export const deleteTodo = async (id: number) => {
+  const url = `${process.env.NEXT_PUBLIC_API_KEY}/${process.env.NEXT_PUBLIC_TENANT_ID}/items/${id}`
+
+  try {
+    fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  } catch (error) {
+    return {
+      message: `[Todo] Failed to Delete Todo. Error: ${error}`,
+    }
+  }
+
+  revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
+  redirect('/')
+}
