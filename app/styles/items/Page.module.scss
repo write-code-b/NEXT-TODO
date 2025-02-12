@@ -1,0 +1,29 @@
+@import '../variables';
+@import '../font';
+@import '../mixins';
+
+.main {
+  @include flex-box($align-items: flex-start);
+  background-color: $gray-50;
+}
+
+.checkListDetailWrap {
+  @include flex-box(
+    $direction: column,
+    $justify-content: flex-start,
+    $gap: 24px
+  );
+  width: 1200px;
+  height: 1020px;
+  background-color: #ffffff;
+
+  @include for-tablet-devices {
+    width: 744px;
+    padding: 24px;
+  }
+
+  @include for-mobile-devices {
+    width: 375px;
+    padding: 16px;
+  }
+}

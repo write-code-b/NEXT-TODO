@@ -1,0 +1,86 @@
+@import '../variables';
+@import '../font';
+@import '../mixins';
+
+.form {
+  @include flex-box(
+    $direction: column,
+    $justify-content: flex-start,
+    $gap: 24px
+  );
+  padding-top: 24px;
+
+  @include for-tablet-devices {
+    width: 100%;
+  }
+
+  @include for-mobile-devices {
+    width: 100%;
+  }
+}
+
+.checkListDetail {
+  @include flex-box($gap: 24px);
+
+  @include for-mobile-devices {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @include for-tablet-devices {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.memo {
+  @include flex-box($direction: column, $justify-content: space-between);
+  width: 588px;
+  height: 311px;
+  padding: 24px 16px;
+  border-radius: 24px;
+  background: url('../../../public/detail/memo.png') center / cover no-repeat;
+
+  > * {
+    font-size: $small-font-size;
+    line-height: 18.16px;
+  }
+
+  @include for-tablet-devices {
+    width: 100%;
+  }
+
+  @include for-mobile-devices {
+    width: 100%;
+  }
+}
+
+.title {
+  color: $amber-800;
+  font-weight: $bolder-font-weight;
+}
+
+.content {
+  width: 80%;
+  height: 80%;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font-weight: $light-font-weight;
+}
+
+.buttonWrap {
+  @include flex-box($justify-content: flex-end, $gap: 16px);
+  width: 100%;
+  padding-right: 102px;
+
+  @include for-tablet-devices {
+    padding: 0;
+    justify-content: center;
+  }
+
+  @include for-mobile-devices {
+    padding: 0;
+    justify-content: center;
+  }
+}
