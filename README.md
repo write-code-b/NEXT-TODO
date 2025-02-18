@@ -1,5 +1,5 @@
 # Todo List
-<img src="public/example.png" style="height:400px;">
+<img src="public/example.png">
 
 <h4>할 일 목록을 관리하는 To Do 웹페이지입니다. <a href="https://next-todo-seven-theta.vercel.app" target="_blank">[demo]</a></h4>
 
@@ -21,6 +21,6 @@
 ## 실행 방법
 
 1. 리포지토리 클론
-2. .env.local 파일 추가 (required: NEXT_PUBLIC_API_KEY, NEXT_PUBLIC_TENANT_ID)
-3. `pnpm install` 명령어 실행
-4. `pnpm run dev` 명령어 실행
+2. `pnpm install` 명령어 실행
+3. .env.local 파일 추가 (required: NEXT_PUBLIC_API_KEY, NEXT_PUBLIC_TENANT_ID)
+4. `pnpm run start` 명령어 실행
