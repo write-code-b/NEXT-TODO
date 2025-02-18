@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import { fetchTodo } from '@/lib/data'
 import List from '@/ui/List'
+import { ListSkeleton } from '@/ui/Skeleton'
 import styles from '@/styles/ListWrap.module.scss'
 
 export default async function ListWrap() {
@@ -15,9 +17,13 @@ export default async function ListWrap() {
   return (
     <div className={styles.listWrapper}>
       {/* TODO */}
-      <List task={todoTask} label={'TODO'} />
+      <Suspense fallback={<ListSkeleton />}>
+        <List task={todoTask} label={'TODO'} />
+      </Suspense>
       {/* DONE */}
-      <List task={doneTask} label={'DONE'} />
+      <Suspense fallback={<ListSkeleton />}>
+        <List task={doneTask} label={'DONE'} />
+      </Suspense>
     </div>
   )
 }

@@ -57,7 +57,7 @@ export const createTodo = async (prevState: State, formData: FormData) => {
     }
   }
 
-  redirect('/') //Redirect to home
+  revalidatePath('/')
 }
 
 // Patch Todo isCompleted
@@ -78,7 +78,7 @@ export const updateTodo = async (id: number, isCompleted: boolean) => {
     }
   }
 
-  revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
+  revalidatePath('/')
   redirect('/')
 }
 
@@ -124,7 +124,7 @@ export const updateTodoById = async (
     }
   }
 
-  revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
+  revalidatePath('/')
   redirect('/')
 }
 
@@ -145,6 +145,5 @@ export const deleteTodo = async (id: number) => {
     }
   }
 
-  revalidatePath('/') //서버 컴포넌트의 새로고침 없이 변경된 부분을 적용
-  redirect('/')
+  revalidatePath('/')
 }

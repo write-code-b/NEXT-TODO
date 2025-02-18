@@ -67,3 +67,8 @@ $xl: 1280px; //for desktops
   border-radius: 24px;
   background-color: #0f172a;
 }
+
+@mixin skeleton {
+  border-radius: 24px;
+  background-color: #edf2f7;
+}
