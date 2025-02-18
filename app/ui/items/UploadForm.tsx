@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import styles from '@/styles/items/UploadForm.module.scss'
 
@@ -58,7 +59,7 @@ export default function UploadForm(props: UploadFormProps) {
       />
       {imageUrl && (
         <>
-          <img className={styles.uploadImage} src={imageUrl} alt="" />
+          <Image className={styles.uploadImage} src={imageUrl} alt="" />
         </>
       )}
       <input
