@@ -30,7 +30,7 @@ export default function Button(props: ButtonProps) {
             src="/button/plus-dark-button.png"
             width={16}
             height={16}
-            alt=""
+            alt="제출 버튼"
           />
         )}
         {state === 'edit' && (
@@ -38,7 +38,7 @@ export default function Button(props: ButtonProps) {
             src="/button/edit-dark-button.png"
             width={16}
             height={16}
-            alt=""
+            alt="수정 버튼"
           />
         )}
         {state === 'delete' && (
@@ -46,7 +46,7 @@ export default function Button(props: ButtonProps) {
             src="/button/delete-light-button.png"
             width={16}
             height={16}
-            alt=""
+            alt="삭제 버튼"
           />
         )}
         <span>{label}</span>

@@ -27,7 +27,7 @@ export default function List(props: ListProps) {
                 src="/default/default-todo.svg"
                 width={240}
                 height={240}
-                alt="no todo data"
+                alt="해야 할 일 데이터가 존재하지 않습니다."
               />
               <div className={styles.emptyMessage}>
                 할 일이 없어요.
@@ -47,7 +47,7 @@ export default function List(props: ListProps) {
                 src="/default/default-done.svg"
                 width={240}
                 height={240}
-                alt="no done data"
+                alt="다 한 일 데이터가 존재하지 않습니다."
               />
               <div className={styles.emptyMessage}>
                 아직 다 한 일이 없어요.
