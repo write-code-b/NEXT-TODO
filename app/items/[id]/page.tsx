@@ -1,5 +1,5 @@
 import { fetchTodoById } from '@/lib/data'
-import TodoDetail from '@/ui/items/DetailForm'
+import TodoDetail from '@/ui/items/EditForm'
 import styles from '@/styles/items/Page.module.scss'
 
 export default async function Home({

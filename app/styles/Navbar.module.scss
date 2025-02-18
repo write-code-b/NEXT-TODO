@@ -5,11 +5,11 @@
 }
 
 .pcLogo {
+  margin-left: 24px;
+
   @include for-mobile-devices {
     @include hide;
   }
-
-  margin-left: 24px;
 }
 
 .mobileLogo {

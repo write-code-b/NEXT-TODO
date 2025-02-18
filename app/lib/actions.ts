@@ -96,7 +96,6 @@ export const updateTodoById = async (
   })
 
   if (!validatedFields.success) {
-    console.log("실패!")
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Todo.',
