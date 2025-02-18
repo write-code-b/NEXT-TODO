@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction } from 'react'
 import Link from 'next/link'
-import { updateTodo, State } from '@/lib/actions'
+import { updateTodo } from '@/lib/actions'
 import styles from '@/styles/Todo.module.scss'
 
 interface TodoProps {
@@ -10,21 +10,22 @@ interface TodoProps {
   name: string
   isCompleted: boolean
   isEditable?: boolean
-  setNameEdit?: Dispatch<SetStateAction<string>>
+  inputValue?: string
+  setInputValue?: Dispatch<SetStateAction<string>>
 }
 
 export default function ToDo(props: TodoProps) {
-  const { id, name, isCompleted, isEditable, setNameEdit } = props
+  const { id, name, isCompleted, isEditable, inputValue, setInputValue } = props
 
   const updateTodoIscomplete = updateTodo.bind(null, id, !isCompleted)
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    if (setNameEdit) setNameEdit(e.target.value)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (setInputValue) setInputValue(e.target.value)
   }
 
   return (
     <div
-      className={`${styles.todo} ${isCompleted && styles.active} ${isEditable && styles.editMode} ${isCompleted && "isCompleted"}`}
+      className={`${styles.todo} ${isCompleted && styles.active} ${isEditable && styles.editMode} ${isCompleted && 'isCompleted'}`}
     >
       <button
         className={styles.checkboxBtn}
@@ -33,11 +34,12 @@ export default function ToDo(props: TodoProps) {
       {isEditable ? (
         <input
           className={styles.input}
-          defaultValue={name}
+          type="text"
+          defaultValue={inputValue}
           id="name"
           name="name"
-          required
           onChange={handleChange}
+          required
         />
       ) : (
         <Link href={`/items/${id}`}>{name}</Link>

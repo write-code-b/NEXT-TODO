@@ -1,6 +1,7 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useState, useActionState, use } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import { updateTodoById, deleteTodo, State } from '@/lib/actions'
 import Todo from '@/ui/Todo'
 import UploadForm from '@/ui/items/UploadForm'
@@ -18,11 +19,17 @@ interface DetailProps {
 export default function DetailForm(props: DetailProps) {
   const { id, name, memo, imageUrl, isCompleted } = props
 
+  const [inputValue, setInputValue] = useState(name)
   const initialState: State = { message: null, errors: {} }
   const updateTodoWithId = updateTodoById.bind(null, id)
   const [state, formAction] = useActionState(updateTodoWithId, initialState)
 
   const deleteTodoWithId = deleteTodo.bind(null, id)
+
+  const editNotify = () => {
+    if (inputValue) toast('수정했습니다.')
+  }
+  const deleteNotify = () => toast('삭제했습니다.')
 
   return (
     <>
@@ -33,6 +40,8 @@ export default function DetailForm(props: DetailProps) {
           name={name}
           isCompleted={isCompleted}
           isEditable={true}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
         />
         <div className={styles.checkListDetail}>
           <UploadForm imageSrc={imageUrl} />
@@ -47,14 +56,18 @@ export default function DetailForm(props: DetailProps) {
           </div>
         </div>
         <div className={styles.buttonWrap}>
-          <Button label="수정 완료" state={'edit'} />
+          <Button label="수정 완료" state={'edit'} onClick={editNotify} />
           <Button
             label="삭제하기"
             state={'delete'}
             isFontWhite={true}
             backgroundColor="#F43F5E"
-            onClick={deleteTodoWithId}
+            onClick={() => {
+              deleteTodoWithId()
+              deleteNotify()
+            }}
           />
+          <ToastContainer/>
         </div>
       </form>
     </>

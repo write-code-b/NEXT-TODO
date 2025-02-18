@@ -42,7 +42,7 @@
   z-index: 1;
 }
 
-.uploadButton::after {
+.default::after {
   content: '';
   display: inline-block;
   width: 24px;
@@ -51,8 +51,22 @@
     no-repeat;
 }
 
+.edit {
+  border: solid 2px $solid-900;
+  background: #0f172a80;
+}
+
+.edit::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('../../../public/detail/edit-button.png') center / contain
+    no-repeat;
+}
+
 .hide {
-  display: none;
+  @include hide;
 }
 
 .uploadImage {
