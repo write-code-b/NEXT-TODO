@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
 import styles from '@/styles/items/UploadForm.module.scss'
 
@@ -23,7 +22,6 @@ export default function UploadForm(props: UploadFormProps) {
   }
 
   const handleSubmit = async (file: string | Blob) => {
-    console.log('!!seelcted file', file)
     const formData = new FormData()
     formData.append('image', file)
 
@@ -49,7 +47,7 @@ export default function UploadForm(props: UploadFormProps) {
   return (
     <div className={styles.box}>
       <label htmlFor="file">
-        <div className={styles.uploadButton}></div>
+        <div className={`${styles.uploadButton} ${imageUrl && styles.edit}`}></div>
       </label>
       <input
         className={styles.hide}
@@ -59,7 +57,7 @@ export default function UploadForm(props: UploadFormProps) {
       />
       {imageUrl && (
         <>
-          <Image className={styles.uploadImage} src={imageUrl} alt="" />
+          <img className={styles.uploadImage} src={imageUrl} alt="" />
         </>
       )}
       <input
